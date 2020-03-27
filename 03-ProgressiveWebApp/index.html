@@ -1,79 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bicycle</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="manifest" href="manifest.json">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="jumbotron text-center p-3 mb-2 bg-success text-white">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bicycle</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row bg-success text-light">
+      <div class="col text-center">
         <h1>ROWER</h1>
         <h3>Pojazd napędzany siłą ludzkich mięśni</h3>
       </div>
-
-      <!--Navbar-->
-      <nav class="navbar p-3 mb-2 bg-white text-dark">
-
-        <!-- Navbar brand -->
-        <a class="text-info" href="#">Menu</a>
-
-        <!-- Collapse button -->
-        <button class="text-info" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
-          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="text-muted"><i
-              class="p-3 mb-2 bg-info text-white"></i></span></button>
-
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-
-          <!-- Links -->
-          <ul class="navbar-nav mr-auto">
-            <li class="text-secondary active">
-              <a class="text-primary" href="#">Firma<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="text-secondary">
-              <a class="text-primary" href="#">Produkty</a>
-            </li>
-            <li class="text-secondary">
-              <a class="text-primary" href="#">Kontakt</a>
-            </li>
-          </ul>
-          <!-- Links -->
-
-        </div>
-        <!-- Collapsible content -->
-
-      </nav>
-      <!--/.Navbar-->
-
-      <div class="row p-3 mb-2 bg-warning text-dark">
-        <div class="col-md-4">
-          <h3>Definicja roweru</h3>
-          <p>Rower – jedno- lub wielośladowy pojazd drogowy napędzany siłą mięśni poruszających się nim osób za pomocą przekładni mechanicznej, wprawianej w ruch (najczęściej) nogami.</p>
-          <p>Pierwotnie nosił nazwę welocyped oraz bicykl i podobnie nazywany jest w większości nowożytnych języków europejskich. Obecna polska nazwa pochodzi od brytyjskiej firmy Rover, która dawniej produkowała rowery.</p>
-        </div>
-        <div class="col-md-8">
-          <h3>Rodzaje rowerów</h3>
-          <h5>Rower miejski</h5>
-          <img src="images/miejski.jpg" class="img-fluid z-depth-1" alt="1">
-          <p>Rower przeznaczony do jazdy w mieście. Tradycyjny rower miejski, tak zwany holender, zbudowany jest najczęściej na kołach 28-calowych (choć spotyka się również rowery z kołami 26- i 27-calowymi), posiada giętą, szeroką kierownicę, krótką ramę i szerokie siodełko umożliwiające jazdę w pozycji wyprostowanej. Posiada on też zwykle lampki zasilane z dynama, komplet błotników, osłonę na łańcuch, nóżkę, bagażnik tylny, czasem osłonę tylnego koła czy koszyk.</p>
-
-          <h5>Rower górski</h5>
-          <img src="images/gorski.jpg" class="img-fluid z-depth-1" alt="1">
-          <p>Rowery górskie (ang. MTB, Mountain Terrain Bike) – nazwa rowerów, których przeznaczeniem jest jazda w terenie trudniejszym, niż pozwalają na to rowery szosowe czy trekingowe, np. górskie ścieżki, szlaki leśne, specjalne tory przeszkód.</p>
-
-          <h5>BMX</h5>
-          <img src="images/bmx.jpg" class="img-fluid z-depth-1" alt="1">
-          <p>BMX (ang. bicycle motocross) – nazwa roweru i rodzaju kolarstwa, które zostało zapoczątkowane w USA w latach 70. XX wieku. Sport ten uprawia się na torach ziemnych ze sztucznie przygotowanymi przeszkodami, z użyciem rowerów na kołach 20-calowych lub 24-calowych (cruiser), posiadających wzmocnioną i bardzo uproszczoną (bez przerzutek) konstrukcję. Poza tym BMX-y mogą mieć dowolny typ konstrukcji, masę i geometrię.</p>
-        </div>
-      </div>
-
     </div>
-  </body>
+
+    <div class="row">
+      <div class="col text-center bg-info text-light">
+        <nav class="navbar">
+          <span class="navbar-text">
+            <div class="pos-f-t">
+              <nav class="navbar text-light">
+                <button class="navbar-toggler text-light lead" type="button" data-toggle="collapse"
+                  data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                  aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+                </button>
+              </nav>
+              <div class="collapse text-left" id="navbarToggleExternalContent">
+                <ul>
+                  <li class="text-white lead">Firma</li>
+                  <li class="text-white lead">Produkty</li>
+                  <li class="text-white lead">Kontakt</li>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row p-3 mb-2 bg-warning text-dark">
+      <div class="col-md-4">
+        <h3>Definicja roweru</h3>
+        <p>Rower – jedno- lub wielośladowy pojazd drogowy napędzany siłą mięśni poruszających się nim osób za pomocą
+          przekładni mechanicznej, wprawianej w ruch (najczęściej) nogami.</p>
+        <p>Pierwotnie nosił nazwę welocyped oraz bicykl i podobnie nazywany jest w większości nowożytnych języków
+          europejskich. Obecna polska nazwa pochodzi od brytyjskiej firmy Rover, która dawniej produkowała rowery.</p>
+      </div>
+      <div class="col-md-8">
+        <h3>Rodzaje rowerów</h3>
+        <h5>Rower miejski</h5>
+        <img src="images/miejski.jpg" class="img-fluid z-depth-1" alt="1">
+        <p>Rower przeznaczony do jazdy w mieście. Tradycyjny rower miejski, tak zwany holender, zbudowany jest
+          najczęściej na kołach 28-calowych (choć spotyka się również rowery z kołami 26- i 27-calowymi), posiada giętą,
+          szeroką kierownicę, krótką ramę i szerokie siodełko umożliwiające jazdę w pozycji wyprostowanej. Posiada on
+          też zwykle lampki zasilane z dynama, komplet błotników, osłonę na łańcuch, nóżkę, bagażnik tylny, czasem
+          osłonę tylnego koła czy koszyk.</p>
+
+        <h5>Rower górski</h5>
+        <img src="images/gorski.jpg" class="img-fluid z-depth-1" alt="1">
+        <p>Rowery górskie (ang. MTB, Mountain Terrain Bike) – nazwa rowerów, których przeznaczeniem jest jazda w terenie
+          trudniejszym, niż pozwalają na to rowery szosowe czy trekingowe, np. górskie ścieżki, szlaki leśne, specjalne
+          tory przeszkód.</p>
+
+        <h5>BMX</h5>
+        <img src="images/bmx.jpg" class="img-fluid z-depth-1" alt="1">
+        <p>BMX (ang. bicycle motocross) – nazwa roweru i rodzaju kolarstwa, które zostało zapoczątkowane w USA w latach
+          70. XX wieku. Sport ten uprawia się na torach ziemnych ze sztucznie przygotowanymi przeszkodami, z użyciem
+          rowerów na kołach 20-calowych lub 24-calowych (cruiser), posiadających wzmocnioną i bardzo uproszczoną (bez
+          przerzutek) konstrukcję. Poza tym BMX-y mogą mieć dowolny typ konstrukcji, masę i geometrię.</p>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
