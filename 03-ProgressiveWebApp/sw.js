@@ -2,7 +2,9 @@ var cacheName = 'bicycle';
 var filesToCache = [
     '/',
     '/index.html',
-    '/js/main.js'
+    '/js/main.js',
+    "/images/icon1.png",
+    "/images/icon2.png"
 ];
 
 /* Start the service worker and cache all of the app's content */
