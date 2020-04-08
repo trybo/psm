@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save</title>
+    <style>
+        button {
+            box-shadow: 0px 0px 0px 2px #9fb4f2;
+            background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+            background-color: #7892c2;
+            border-radius: 10px;
+            border: 1px solid #4e6096;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 19px;
+            padding: 12px 37px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #283966;
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+            background-color: #476e9e;
+        }
+
+        button:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="movies">
+        <button onclick="saveToDataBase()">ZAPISZ</button>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCZqXgEk5NDekbhoNIPWkp9apZaxqZIGp0",
+            authDomain: "psm-firebase.firebaseapp.com",
+            databaseURL: "https://psm-firebase.firebaseio.com",
+            projectId: "psm-firebase",
+            storageBucket: "psm-firebase.appspot.com",
+            messagingSenderId: "492361808124",
+            appId: "1:492361808124:web:236a4202d303f5f2fdff79"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        function saveToDataBase() {
+            fetch("./MOCK_DATA.json")
+                .then(function (resp) {
+                    return resp.json();
+                }).then(function (data) {
+                    for (movie in data) {
+                        db.collection("movies").add({
+                            title: data[movie].title,
+                            genre: data[movie].genre,
+                            country: data[movie].country,
+                            money: data[movie].money,
+                            premiere: data[movie].premiere
+                        })
+                    }
+                })
+        }
+
+    </script>
+</body>
+
+</html>

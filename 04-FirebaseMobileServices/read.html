@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="movies">
+
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCZqXgEk5NDekbhoNIPWkp9apZaxqZIGp0",
+            authDomain: "psm-firebase.firebaseapp.com",
+            databaseURL: "https://psm-firebase.firebaseio.com",
+            projectId: "psm-firebase",
+            storageBucket: "psm-firebase.appspot.com",
+            messagingSenderId: "492361808124",
+            appId: "1:492361808124:web:236a4202d303f5f2fdff79"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        const data = db.collection('movies');
+        var fragment = document.createDocumentFragment();
+        var table = document.createElement("table");
+        var header = table.createTHead();
+        var row = header.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "<b>Tytuł</b>";
+        cell2.innerHTML = "<b>Gatunek</b>";
+        cell3.innerHTML = "<b>Kraj</b>";
+        cell4.innerHTML = "<b>Budzet</b>";
+        cell5.innerHTML = "<b>Premiera</b>";
+
+        data.get().then(function (querySnapshot) {
+            querySnapshot.forEach(item => {
+                var tr = document.createElement("tr");
+                var trValues = [item.data().title, item.data().genre, item.data().country, item.data().money, item.data().premiere]
+
+                trValues.forEach(item => {
+                    var td = document.createElement("td");
+                    td.textContent = item;
+                    tr.appendChild(td);
+                })
+                table.appendChild(tr);
+            })
+        })
+        fragment.appendChild(table);
+        document.body.appendChild(fragment);
+    </script>
+</body>
+
+</html>

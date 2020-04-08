@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyBook</title>
+</head>
+
+<body>
+    <div id="form">
+        <h1>Form:</h1>
+        <b>Tytuł </b>
+        <input type="textfield" id="title" />
+        <br>
+        <b>Imię autora </b>
+        <input type="textfield" id="name" />
+        <br>
+        <b>Nazwisko autora </b>
+        <input type="textfield" id="surname" />
+        <br>
+        <b>Gatunek literacki</b>
+        <input type="textfield" id="genre" />
+        <br>
+        <b>Rok wydania </b>
+        <input type="textfield" id="year" />
+        <br>
+        <b>ISBN </b>
+        <input type="textfield" id="ISBN" />
+        <br>
+        <button id="save">Zapisz</button>
+    </div>
+    <br>
+    <div id="yourBook"></div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCZqXgEk5NDekbhoNIPWkp9apZaxqZIGp0",
+            authDomain: "psm-firebase.firebaseapp.com",
+            databaseURL: "https://psm-firebase.firebaseio.com",
+            projectId: "psm-firebase",
+            storageBucket: "psm-firebase.appspot.com",
+            messagingSenderId: "492361808124",
+            appId: "1:492361808124:web:236a4202d303f5f2fdff79"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        const outputData = document.getElementById("yourBook");
+
+        save.addEventListener("click", function () {
+            const titleSave = document.getElementById("title").value;
+            const nameSave = document.getElementById("name").value;
+            const surnameSave = document.getElementById("surname").value;
+            const genreSave = document.getElementById("genre").value;
+            const yearSave = document.getElementById("year").value;
+            const isbnSave = document.getElementById("ISBN").value;
+
+            db.collection("books").add({
+                title: titleSave,
+                author_name: nameSave,
+                author_surname: surnameSave,
+                genre: genreSave,
+                year: Number(yearSave),
+                ISBN: isbnSave
+            }).then(function (newDoc) {
+                docRef = db.doc(`books/${newDoc.id}`);
+
+                docRef.get().then(function (doc) {
+                    if (doc && doc.exists) {
+                        const myData = doc.data();
+                        for (const [item, value] of Object.entries(myData)) {
+                            outputData.innerHTML += `<b>${item}</b>: ${value} <br>`;
+                        }
+                    }
+                }).catch(function (error) {
+                    console.log("error: ", error);
+                }
+                );
+            })
+        })
+    </script>
+</body>
+
+</html>
